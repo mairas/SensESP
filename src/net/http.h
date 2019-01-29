@@ -13,8 +13,8 @@ class HTTPServer {
   void handle_device_reset(AsyncWebServerRequest* request);
   void handle_device_restart(AsyncWebServerRequest* request);
   void handle_info(AsyncWebServerRequest* request);
-  void handle_settings_hostname(AsyncWebServerRequest* request);
-  void handle_settings_signalk_address(AsyncWebServerRequest* request);
+  void handle_system_hostname(AsyncWebServerRequest* request);
+  void handle_system_signalk_address(AsyncWebServerRequest* request);
  private:
   AsyncWebServer* server;
 };

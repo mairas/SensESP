@@ -66,15 +66,11 @@ HTTPServer::HTTPServer() {
              std::bind(&HTTPServer::handle_device_restart, this, _1));
   server->on("/info", HTTP_GET,
              std::bind(&HTTPServer::handle_info, this, _1));
-  server->on("/settings/hostname", HTTP_GET|HTTP_PUT,
-             std::bind(&HTTPServer::handle_settings_hostname, this, _1));
-  server->on("/settings/signalk/host", HTTP_GET|HTTP_PUT,
-             std::bind(&HTTPServer::handle_settings_signalk_host, this, _1));
-  server->on("/settings/signalk/port", HTTP_GET|HTTP_PUT,
-             std::bind(&HTTPServer::handle_settings_signalk_port, this, _1));
-  server->on("/settings/signalk/path", HTTP_GET|HTTP_PUT,
-             std::bind(&HTTPServer::handle_settings_signalk_path, this, _1));
-}
+  server->on("/system/hostname", HTTP_GET|HTTP_PUT,
+             std::bind(&HTTPServer::handle_system_hostname, this, _1));
+  server->on("/system/signalk", HTTP_GET|HTTP_PUT,
+             std::bind(&HTTPServer::handle_system_signalk_address, this, _1));
+  }
 
 void HTTPServer::handle_not_found(AsyncWebServerRequest* request) {
   Serial.printf("NOT_FOUND: ");
@@ -139,18 +135,10 @@ void HTTPServer::handle_info(AsyncWebServerRequest* request) {
   request->send(200, "text/plain", "/info");
 }
 
-void HTTPServer::handle_settings_hostname(AsyncWebServerRequest* request) {
-  request->send(200, "text/plain", "/settings/hostname");
+void HTTPServer::handle_system_hostname(AsyncWebServerRequest* request) {
+  request->send(200, "text/plain", "/system/hostname");
 }
 
-void HTTPServer::handle_settings_signalk_host(AsyncWebServerRequest* request) {
-  request->send(200, "text/plain", "/settings/signalk/host");
-}
-
-void HTTPServer::handle_settings_signalk_port(AsyncWebServerRequest* request) {
-  request->send(200, "text/plain", "/settings/signalk/port");
-}
-
-void HTTPServer::handle_settings_signalk_path(AsyncWebServerRequest* request) {
-  request->send(200, "text/plain", "/settings/signalk/path");
+void HTTPServer::handle_system_signalk_address(AsyncWebServerRequest* request) {
+  request->send(200, "text/plain", "/system/signalk");
 }
