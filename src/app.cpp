@@ -3,7 +3,7 @@
 #include "devices/analog_input.h"
 #include "devices/system_info.h"
 #include "net/ota.h"
-#include "net/wifi.h"
+#include "net/networking.h"
 #include "system/spiffs_storage.h"
 
 
