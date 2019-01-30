@@ -125,7 +125,8 @@ void HTTPServer::handle_device_reset(AsyncWebServerRequest* request) {
 }
 
 void HTTPServer::handle_device_restart(AsyncWebServerRequest* request) {
-  request->send(200, "text/plain", "/device/restart");
+  request->send(200, "text/plain", "OK, restarting\n");
+  app.onDelay(50, [](){ ESP.restart(); });
 }
 
 void HTTPServer::handle_info(AsyncWebServerRequest* request) {
