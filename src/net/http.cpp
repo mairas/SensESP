@@ -10,6 +10,7 @@
 #include <ESPAsyncWebServer.h>
 
 #include "config.h"
+#include "sensesp.h"
 
 // Simple web page to view deltas
 const char INDEX_PAGE[] PROGMEM = R"foo(
@@ -66,10 +67,6 @@ HTTPServer::HTTPServer() {
              std::bind(&HTTPServer::handle_device_restart, this, _1));
   server->on("/info", HTTP_GET,
              std::bind(&HTTPServer::handle_info, this, _1));
-  server->on("/system/hostname", HTTP_GET|HTTP_PUT,
-             std::bind(&HTTPServer::handle_system_hostname, this, _1));
-  server->on("/system/signalk", HTTP_GET|HTTP_PUT,
-             std::bind(&HTTPServer::handle_system_signalk_address, this, _1));
   }
 
 void HTTPServer::handle_not_found(AsyncWebServerRequest* request) {
@@ -133,12 +130,4 @@ void HTTPServer::handle_device_restart(AsyncWebServerRequest* request) {
 
 void HTTPServer::handle_info(AsyncWebServerRequest* request) {
   request->send(200, "text/plain", "/info");
-}
-
-void HTTPServer::handle_system_hostname(AsyncWebServerRequest* request) {
-  request->send(200, "text/plain", "/system/hostname");
-}
-
-void HTTPServer::handle_system_signalk_address(AsyncWebServerRequest* request) {
-  request->send(200, "text/plain", "/system/signalk");
 }
