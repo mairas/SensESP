@@ -10,12 +10,13 @@
 
 class SKDelta {
  public:
-  SKDelta(const String& hostname, int max_buffer_size=20);
+  SKDelta(String hostname, int max_buffer_size=20);
   void append(const String val);
   bool data_available();
   void get_delta(String& output);
+  void set_hostname(String hostname) { this->hostname = hostname; }
  private:
-  const String& hostname;
+  String hostname;
   int max_buffer_size;
   std::list<String> buffer;
 };
