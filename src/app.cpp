@@ -1,5 +1,7 @@
 #include "app.h"
 
+#include "FS.h"
+
 #include "devices/analog_input.h"
 #include "devices/system_info.h"
 #include "net/ota.h"
@@ -12,45 +14,73 @@
 SensESPApp::SensESPApp() {
   // initialize filesystem
 
-  setup_spiffs_storage();
+  if (!SPIFFS.begin()) {
+    Serial.println("FATAL: Filesystem initialization failed.");
+    ESP.restart();
+  }
+
+  // create the networking object
+  networking = new Networking("/system/networking", "");
+  ObservableValue<String>* hostname = networking->get_hostname();
 
   // connect systemhz
 
-  SystemHz* syshz = new SystemHz();
-  Passthrough<float>* syshz_value = new Passthrough<float>("sensors.unknown.system_hz");
-  syshz->attach([syshz, syshz_value](){ syshz_value->set_input(syshz->get()); });
-  devices.push_back(syshz);
-  components.push_back(syshz_value);
+  SystemHz* syshz_dev = new SystemHz();
+  Passthrough<float>* syshz_comp = new Passthrough<float>(
+    "sensors.unknown.system_hz");
+  // update the SK path if hostname changes
+  hostname->attach(
+    [&hostname, &syshz_comp](){ 
+      syshz_comp->set_sk_path(String("sensors.") + 
+                               hostname->get() + 
+                               ".system_hz"); 
+  });
+  syshz_dev->attach([&syshz_dev, &syshz_comp](){
+    syshz_comp->set_input(syshz_dev->get()); 
+  });
+  devices.push_back(syshz_dev);
+  computations.push_back(syshz_comp);
 
   // connect freemem
 
-  FreeMem* freemem = new FreeMem();
-  Passthrough<float>* freemem_value = new Passthrough<float>("sensors.unknown.freemem");
-  freemem->attach([freemem, freemem_value](){ freemem_value->set_input(freemem->get()); });
-  devices.push_back(freemem);
-  components.push_back(freemem_value);
+  FreeMem* freemem_dev = new FreeMem();
+  Passthrough<float>* freemem_comp = new Passthrough<float>(
+    "sensors.unknown.freemem");
+  freemem_dev->attach([freemem_dev, freemem_comp](){ 
+    freemem_comp->set_input(freemem_dev->get()); 
+  });
+  devices.push_back(freemem_dev);
+  computations.push_back(freemem_comp);
 
   // connect uptime (exaggerate the value!)
 
-  Uptime* uptime = new Uptime();
-  Linear* uptime_value = new Linear("sensors.unknown.uptime", 1.2, 3600.,
+  Uptime* uptime_dev = new Uptime();
+  Linear* uptime_comp = new Linear("sensors.unknown.uptime", 1.2, 3600.,
                                     "/comp/uptime");
-  uptime->attach([uptime, uptime_value](){ uptime_value->set_input(uptime->get()); });
-  devices.push_back(uptime);
-  components.push_back(uptime_value);
+  uptime_dev->attach([uptime_dev, uptime_comp](){ 
+    uptime_comp->set_input(uptime_dev->get()); 
+  });
+  devices.push_back(uptime_dev);
+  computations.push_back(uptime_comp);
 
   // connect analog input
 
-  AnalogInput* analog_in = new AnalogInput();
-  Passthrough<float>* analog_value = new Passthrough<float>("sensors.unknown.analog");
-  analog_in->attach([analog_in, analog_value](){ analog_value->set_input(analog_in->get()); });
-  devices.push_back(analog_in);
-  components.push_back(analog_value);
+  AnalogInput* analog_in_dev = new AnalogInput();
+  Passthrough<float>* analog_comp = new Passthrough<float>(
+    "sensors.unknown.analog");
+  analog_in_dev->attach([analog_in_dev, analog_comp](){ 
+    analog_comp->set_input(analog_in_dev->get()); 
+  });
+  devices.push_back(analog_in_dev);
+  computations.push_back(analog_comp);
 
-  // connect all components to the Signal K delta output
+  // connect all computations to the Signal K delta output
 
-  sk_delta = new SKDelta("unknown");
-  for (auto const& comp : components) {
+  sk_delta = new SKDelta(hostname->get());
+  hostname->attach([hostname, this](){ 
+    this->sk_delta->set_hostname(hostname->get()); 
+  });
+  for (auto const& comp : computations) {
     comp->attach([comp, this](){ this->sk_delta->append(comp->as_json()); });
   }
 
@@ -76,8 +106,17 @@ SensESPApp::SensESPApp() {
 
 void SensESPApp::enable() {
   this->led_blinker.set_wifi_disconnected();
+  
   Serial.println("Enabling subsystems");
-  setup_networking(led_blinker);
+  
+  networking->setup([this](bool connected) {
+    if (connected) {
+      this->led_blinker.set_wifi_connected();
+    } else {
+      this->led_blinker.set_wifi_disconnected();
+    }
+  });
+
   setup_OTA();
 
   this->http_server->enable();
