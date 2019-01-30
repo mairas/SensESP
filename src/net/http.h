@@ -3,9 +3,11 @@
 
 #include <ESPAsyncWebServer.h>
 
+#include "app.h"
+
 class HTTPServer {
  public:
-  HTTPServer();
+  HTTPServer(SensESPApp* app);
   ~HTTPServer() { delete server; }
   void enable() { server-> begin(); }
   void handle_not_found(AsyncWebServerRequest* request);
@@ -15,6 +17,7 @@ class HTTPServer {
   void handle_info(AsyncWebServerRequest* request);
  private:
   AsyncWebServer* server;
+  SensESPApp* sensesp_app;
 };
 
 
