@@ -2,8 +2,8 @@
 
 // Linear
 
-Linear::Linear(String path, float k, float c, String id, String schema) :
-    OneToOneTransform<float>{ path, id, schema },
+Linear::Linear(String path, float k, float c, String config_path) :
+    SymmetricTransform<float>{ path, config_path },
       k{ k },
       c{ c } {
   load_configuration();
@@ -15,7 +15,7 @@ void Linear::set_input(float input, uint8_t inputChannel) {
   notify();
 }
 
-String Linear::as_json() {
+String Linear::as_signalK() {
   DynamicJsonBuffer jsonBuffer;
   String json;
   JsonObject& root = jsonBuffer.createObject();
@@ -32,6 +32,20 @@ JsonObject& Linear::get_configuration(JsonBuffer& buf) {
   root["sk_path"] = sk_path;
   root["value"] = output;
   return root;
+}
+
+static const char SCHEMA[] PROGMEM = R"({
+    "type": "object",
+    "properties": {
+        "sk_path": { "title": "SignalK Path", "type": "string" },
+        "k": { "title": "Multiplier", "type": "number" },
+        "c": { "title": "Constant offset", "type": "number" },
+        "value": { "title": "Last value", "type" : "number", "readOnly": true }
+    }
+  })";
+
+String Linear::get_config_schema() {
+  return FPSTR(SCHEMA);
 }
 
 bool Linear::set_configuration(const JsonObject& config) {

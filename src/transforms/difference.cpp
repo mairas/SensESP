@@ -2,8 +2,8 @@
 
 // Difference
 
-Difference::Difference(String path, float k1, float k2, String id, String schema)
-    : OneToOneTransform<float>{ path, id, schema },
+Difference::Difference(String path, float k1, float k2, String config_path)
+    : SymmetricTransform<float>{ path, config_path },
       k1{ k1 },
       k2{ k2 } {
   load_configuration();
@@ -19,7 +19,7 @@ void Difference::set_input(float input, uint8_t inputChannel) {
   }
 }
 
-String Difference::as_json() {
+String Difference::as_signalK() {
   DynamicJsonBuffer jsonBuffer;
   String json;
   JsonObject& root = jsonBuffer.createObject();
@@ -36,6 +36,20 @@ JsonObject& Difference::get_configuration(JsonBuffer& buf) {
   root["sk_path"] = sk_path;
   root["value"] = output;
   return root;
+}
+
+static const char SCHEMA[] PROGMEM = R"({
+    "type": "object",
+    "properties": {
+        "sk_path": { "title": "SignalK Path", "type": "string" },
+        "k1": { "title": "Input #1 multiplier", "type": "number" },
+        "k2": { "title": "Input #2 multiplier", "type": "number" },
+        "value": { "title": "Last value", "type" : "number", "readOnly": true }
+    }
+  })";
+
+String Difference::get_config_schema() {
+  return FPSTR(SCHEMA);
 }
 
 bool Difference::set_configuration(const JsonObject& config) {

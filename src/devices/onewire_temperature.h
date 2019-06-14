@@ -12,7 +12,7 @@ typedef std::array<uint8_t, 8> OWDevAddr;
 
 class DallasTemperatureSensors : public Device {
  public:
-  DallasTemperatureSensors(int pin, String id="", String schema="");
+  DallasTemperatureSensors(int pin, String config_path="");
   void enable() override final {}
   bool register_address(const OWDevAddr& addr);
   bool get_next_address(OWDevAddr* addr);
@@ -27,15 +27,16 @@ class DallasTemperatureSensors : public Device {
 class OneWireTemperature : public NumericDevice {
  public:
   OneWireTemperature(DallasTemperatureSensors* dts,
-                     String id="", String schema="");
+                     String config_path="");
   void enable() override final;
   virtual JsonObject& get_configuration(JsonBuffer& buf) override final;
   virtual bool set_configuration(const JsonObject& config) override final;
+  virtual String get_config_schema() override;
 
  private:
   OneWire* onewire;
   DallasTemperatureSensors* dts;
-  bool failed=false;
+  bool found=false;
   OWDevAddr address = {};
   void update();
   void read_value();

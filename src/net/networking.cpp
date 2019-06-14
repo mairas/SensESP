@@ -17,8 +17,8 @@ void save_config_callback() {
   should_save_config = true;
 }
 
-Networking::Networking(String id, String schema)
-    : Configurable{id, schema} {
+Networking::Networking(String config_path)
+    : Configurable{config_path} {
   hostname = new ObservableValue<String>(String("unknown"));
   load_configuration();
   server = new AsyncWebServer(80);
@@ -45,10 +45,10 @@ void Networking::setup(std::function<void(bool)> connection_cb) {
   wifi_manager->setDebugOutput(false);
   #endif
   AsyncWiFiManagerParameter custom_hostname(
-    "hostname", "Set hostname", this->hostname->get().c_str(), 20);
+    "hostname", "Set ESP device hostname", this->hostname->get().c_str(), 20);
   wifi_manager->addParameter(&custom_hostname);
 
-  if (!wifi_manager->autoConnect("Unconfigured Sensor")) {
+  if (!wifi_manager->autoConnect("Unconfigured SensESP Device")) {
     debugE("Failed to connect to wifi and config timed out.");
     ESP.restart();
   }
@@ -75,6 +75,17 @@ ObservableValue<String>* Networking::get_hostname() {
 void Networking::set_hostname(String hostname) {
   debugD("Setting hostname");
   this->hostname->set(hostname);
+}
+
+static const char SCHEMA[] PROGMEM = R"({
+    "type": "object",
+    "properties": {
+        "hostname": { "title": "ESP device hostname", "type": "string" }
+    }
+  })";
+
+String Networking::get_config_schema() {
+  return FPSTR(SCHEMA);
 }
 
 JsonObject& Networking::get_configuration(JsonBuffer& buf) {

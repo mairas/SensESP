@@ -1,8 +1,10 @@
 var annotated_dup =
 [
     [ "AnalogInput", "class_analog_input.html", "class_analog_input" ],
+    [ "AnalogVoltage", "class_analog_voltage.html", "class_analog_voltage" ],
     [ "Configurable", "class_configurable.html", "class_configurable" ],
     [ "DallasTemperatureSensors", "class_dallas_temperature_sensors.html", "class_dallas_temperature_sensors" ],
+    [ "Debounce", "class_debounce.html", "class_debounce" ],
     [ "Device", "class_device.html", "class_device" ],
     [ "Difference", "class_difference.html", "class_difference" ],
     [ "DigitalInput", "class_digital_input.html", "class_digital_input" ],
@@ -20,6 +22,7 @@ var annotated_dup =
     [ "HTTPServer", "class_h_t_t_p_server.html", "class_h_t_t_p_server" ],
     [ "IntegerDevice", "class_integer_device.html", "class_integer_device" ],
     [ "Integrator", "class_integrator.html", "class_integrator" ],
+    [ "Interpolate", "class_interpolate.html", "class_interpolate" ],
     [ "IPAddrDev", "class_i_p_addr_dev.html", "class_i_p_addr_dev" ],
     [ "LedBlinker", "class_led_blinker.html", "class_led_blinker" ],
     [ "Linear", "class_linear.html", "class_linear" ],
@@ -30,7 +33,6 @@ var annotated_dup =
     [ "NumericDevice", "class_numeric_device.html", "class_numeric_device" ],
     [ "Observable", "class_observable.html", "class_observable" ],
     [ "ObservableValue", "class_observable_value.html", "class_observable_value" ],
-    [ "OneToOneTransform", "class_one_to_one_transform.html", "class_one_to_one_transform" ],
     [ "OneWireTemperature", "class_one_wire_temperature.html", "class_one_wire_temperature" ],
     [ "Passthrough", "class_passthrough.html", "class_passthrough" ],
     [ "Position", "struct_position.html", "struct_position" ],
@@ -42,12 +44,15 @@ var annotated_dup =
     [ "SignalKSource", "class_signal_k_source.html", "class_signal_k_source" ],
     [ "SKDelta", "class_s_k_delta.html", "class_s_k_delta" ],
     [ "StringDevice", "class_string_device.html", "class_string_device" ],
+    [ "SymmetricTransform", "class_symmetric_transform.html", "class_symmetric_transform" ],
     [ "SystemHz", "class_system_hz.html", "class_system_hz" ],
+    [ "TemperatureInterpreter", "class_temperature_interpreter.html", "class_temperature_interpreter" ],
     [ "TimeString", "class_time_string.html", "class_time_string" ],
     [ "Transform", "class_transform.html", "class_transform" ],
     [ "TransformBase", "class_transform_base.html", "class_transform_base" ],
     [ "Uptime", "class_uptime.html", "class_uptime" ],
     [ "ValueConsumer", "class_value_consumer.html", "class_value_consumer" ],
     [ "ValueProducer", "class_value_producer.html", "class_value_producer" ],
+    [ "VoltageDividerR2", "class_voltage_divider_r2.html", "class_voltage_divider_r2" ],
     [ "WSClient", "class_w_s_client.html", "class_w_s_client" ]
 ];

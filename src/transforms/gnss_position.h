@@ -13,10 +13,10 @@
 ///////////////////
 // provide correct output formatting for GNSS position
 
-class GNSSPosition : public OneToOneTransform<Position> {
+class GNSSPosition : public SymmetricTransform<Position> {
  public:
-  GNSSPosition(String sk_path, String id="", String schema="") :
-    OneToOneTransform<Position>{sk_path, id, schema } {
+  GNSSPosition(String sk_path, String config_path="") :
+    SymmetricTransform<Position>{sk_path, config_path} {
   }
 
   virtual void set_input(Position newValue, uint8_t inputChannel = 0) {
@@ -24,11 +24,12 @@ class GNSSPosition : public OneToOneTransform<Position> {
      notify();
   }
 
-  virtual String as_json() override final;
+  virtual String as_signalK() override final;
 
   virtual JsonObject& get_configuration(JsonBuffer& buf) override final;
 
   virtual bool set_configuration(const JsonObject& config) override final;
+  virtual String get_config_schema() override;
 
 };
 

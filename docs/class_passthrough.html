@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SensESP
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
    <div id="projectbrief">Universal Signal K sensor framework for ESP8266 and ESP32</div>
   </td>
@@ -99,48 +99,51 @@ $(document).ready(function(){initNavTree('class_passthrough.html','');});
 <div class="dynheader">
 Inheritance diagram for Passthrough&lt; T &gt;:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_passthrough.png" usemap="#Passthrough_3C_20T_20_3E_map" alt=""/>
-  <map id="Passthrough_3C_20T_20_3E_map" name="Passthrough_3C_20T_20_3E_map">
-<area href="class_one_to_one_transform.html" alt="OneToOneTransform&lt; T &gt;" shape="rect" coords="172,224,334,248"/>
-<area href="class_value_consumer.html" alt="ValueConsumer&lt; T &gt;" shape="rect" coords="0,168,162,192"/>
-<area href="class_transform.html" alt="Transform&lt; T &gt;" shape="rect" coords="344,168,506,192"/>
-<area href="class_transform_base.html" alt="TransformBase" shape="rect" coords="172,112,334,136"/>
-<area href="class_value_producer.html" alt="ValueProducer&lt; T &gt;" shape="rect" coords="516,112,678,136"/>
-<area href="class_signal_k_source.html" alt="SignalKSource" shape="rect" coords="0,56,162,80"/>
-<area href="class_configurable.html" alt="Configurable" shape="rect" coords="172,56,334,80"/>
-<area href="class_enable.html" alt="Enable" shape="rect" coords="344,56,506,80"/>
-<area href="class_observable.html" alt="Observable" shape="rect" coords="516,56,678,80"/>
-<area href="class_observable.html" alt="Observable" shape="rect" coords="0,0,162,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_passthrough__inherit__graph.png" border="0" usemap="#_passthrough_3_01_t_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="_passthrough_3_01_t_01_4_inherit__map" id="_passthrough_3_01_t_01_4_inherit__map">
+<area shape="rect"  title=" " alt="" coords="135,372,262,397"/>
+<area shape="rect"  href="class_symmetric_transform.html" title=" " alt="" coords="111,299,286,324"/>
+<area shape="rect"  href="class_value_consumer.html" title=" " alt="" coords="49,225,196,251"/>
+<area shape="rect"  href="class_transform.html" title=" " alt="" coords="220,225,332,251"/>
+<area shape="rect"  href="class_transform_base.html" title=" " alt="" coords="143,152,255,177"/>
+<area shape="rect"  href="class_signal_k_source.html" title=" " alt="" coords="5,79,115,104"/>
+<area shape="rect"  href="class_observable.html" title=" " alt="" coords="165,5,254,31"/>
+<area shape="rect"  href="class_value_producer.html" title=" " alt="" coords="284,152,423,177"/>
+<area shape="rect"  href="class_configurable.html" title=" " alt="" coords="138,79,235,104"/>
+<area shape="rect"  href="class_enable.html" title=" " alt="" coords="259,79,322,104"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad4c60e8f46012deb4643f2ad7871df72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#ad4c60e8f46012deb4643f2ad7871df72">Passthrough</a> ()</td></tr>
 <tr class="separator:ad4c60e8f46012deb4643f2ad7871df72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a310faf6e412b355b3c971fb79d36c075"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#a310faf6e412b355b3c971fb79d36c075">Passthrough</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>, String <a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a>=&quot;&quot;, String schema=&quot;&quot;)</td></tr>
-<tr class="separator:a310faf6e412b355b3c971fb79d36c075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f4217398589b274a2a2c4b7f48c8e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#a63f4217398589b274a2a2c4b7f48c8e5">Passthrough</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>, String <a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a>=&quot;&quot;)</td></tr>
+<tr class="separator:a63f4217398589b274a2a2c4b7f48c8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a401a7f308b76eac7ed7d90a618d997db"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#a401a7f308b76eac7ed7d90a618d997db">set_input</a> (T newValue, uint8_t inputChannel=0) override</td></tr>
 <tr class="separator:a401a7f308b76eac7ed7d90a618d997db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87f840179756a79a9d19e53eb573164a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#a87f840179756a79a9d19e53eb573164a">as_json</a> () override final</td></tr>
-<tr class="separator:a87f840179756a79a9d19e53eb573164a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc3e3b30c646d1e49bc9b003e7edb97e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#acc3e3b30c646d1e49bc9b003e7edb97e">as_signalK</a> () override final</td></tr>
+<tr class="separator:acc3e3b30c646d1e49bc9b003e7edb97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecaa7961190394983b550495da47ee9c"><td class="memItemLeft" align="right" valign="top">virtual JsonObject &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#aecaa7961190394983b550495da47ee9c">get_configuration</a> (JsonBuffer &amp;buf) override</td></tr>
 <tr class="separator:aecaa7961190394983b550495da47ee9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa19d8446db1373f48ca644f3463580a8"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#aa19d8446db1373f48ca644f3463580a8">get_config_schema</a> () override</td></tr>
+<tr class="separator:aa19d8446db1373f48ca644f3463580a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3a80dd8daac718da3c75eb9eb45197a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_passthrough.html#ae3a80dd8daac718da3c75eb9eb45197a">set_configuration</a> (const JsonObject &amp;config) override</td></tr>
 <tr class="separator:ae3a80dd8daac718da3c75eb9eb45197a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_one_to_one_transform"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_one_to_one_transform')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_one_to_one_transform.html">OneToOneTransform&lt; T &gt;</a></td></tr>
-<tr class="memitem:aebefa19d7bbc8a05ccd7a6f90c3195b9 inherit pub_methods_class_one_to_one_transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_one_to_one_transform.html#aebefa19d7bbc8a05ccd7a6f90c3195b9">OneToOneTransform</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>, String <a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a>=&quot;&quot;, String schema=&quot;&quot;)</td></tr>
-<tr class="separator:aebefa19d7bbc8a05ccd7a6f90c3195b9 inherit pub_methods_class_one_to_one_transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_symmetric_transform"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_symmetric_transform')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_symmetric_transform.html">SymmetricTransform&lt; T &gt;</a></td></tr>
+<tr class="memitem:add5f3e15e1956bde08508240e1031722 inherit pub_methods_class_symmetric_transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symmetric_transform.html#add5f3e15e1956bde08508240e1031722">SymmetricTransform</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>, String <a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a>=&quot;&quot;)</td></tr>
+<tr class="separator:add5f3e15e1956bde08508240e1031722 inherit pub_methods_class_symmetric_transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefde059b7d9b753b11a33dd4bac6972b inherit pub_methods_class_symmetric_transform"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_symmetric_transform.html">SymmetricTransform</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symmetric_transform.html#aefde059b7d9b753b11a33dd4bac6972b">connectFrom</a> (<a class="el" href="class_value_producer.html">ValueProducer</a>&lt; T &gt; *pProducer0, <a class="el" href="class_value_producer.html">ValueProducer</a>&lt; T &gt; *pProducer1=NULL, <a class="el" href="class_value_producer.html">ValueProducer</a>&lt; T &gt; *pProducer2=NULL, <a class="el" href="class_value_producer.html">ValueProducer</a>&lt; T &gt; *pProducer3=NULL, <a class="el" href="class_value_producer.html">ValueProducer</a>&lt; T &gt; *pProducer4=NULL)</td></tr>
+<tr class="separator:aefde059b7d9b753b11a33dd4bac6972b inherit pub_methods_class_symmetric_transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_value_consumer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_value_consumer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_value_consumer.html">ValueConsumer&lt; T &gt;</a></td></tr>
 <tr class="memitem:a6adf62d8d87ffa3ce70bb85379a68715 inherit pub_methods_class_value_consumer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_value_consumer.html#a6adf62d8d87ffa3ce70bb85379a68715">connectFrom</a> (<a class="el" href="class_value_producer.html">ValueProducer</a>&lt; T &gt; *pProducer, uint8_t inputChannel=0)</td></tr>
 <tr class="separator:a6adf62d8d87ffa3ce70bb85379a68715 inherit pub_methods_class_value_consumer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_transform"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_transform')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_transform.html">Transform&lt; T &gt;</a></td></tr>
-<tr class="memitem:a8bf0c2460ed128cb57caa14f1d47a5b6 inherit pub_methods_class_transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a8bf0c2460ed128cb57caa14f1d47a5b6">Transform</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>, String <a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a>=&quot;&quot;, String schema=&quot;&quot;)</td></tr>
-<tr class="separator:a8bf0c2460ed128cb57caa14f1d47a5b6 inherit pub_methods_class_transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44b7bcef8cc3b89fd6bbdb6a2bd98593 inherit pub_methods_class_transform"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform.html#a44b7bcef8cc3b89fd6bbdb6a2bd98593">Transform</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>, String <a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a>=&quot;&quot;)</td></tr>
+<tr class="separator:a44b7bcef8cc3b89fd6bbdb6a2bd98593 inherit pub_methods_class_transform"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_transform_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_transform_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_transform_base.html">TransformBase</a></td></tr>
-<tr class="memitem:a6216afd0dcb7d71b91b11b444a97f5f0 inherit pub_methods_class_transform_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform_base.html#a6216afd0dcb7d71b91b11b444a97f5f0">TransformBase</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>, String <a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a>=&quot;&quot;, String schema=&quot;&quot;)</td></tr>
-<tr class="separator:a6216afd0dcb7d71b91b11b444a97f5f0 inherit pub_methods_class_transform_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5499a469190bd7d6efcc5bbec4f49d7 inherit pub_methods_class_transform_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transform_base.html#ac5499a469190bd7d6efcc5bbec4f49d7">TransformBase</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>, String <a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a>=&quot;&quot;)</td></tr>
+<tr class="separator:ac5499a469190bd7d6efcc5bbec4f49d7 inherit pub_methods_class_transform_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_signal_k_source"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_signal_k_source')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_signal_k_source.html">SignalKSource</a></td></tr>
 <tr class="memitem:af2ba130c1d59658c144ac3841d967ac8 inherit pub_methods_class_signal_k_source"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_signal_k_source.html#af2ba130c1d59658c144ac3841d967ac8">SignalKSource</a> (String <a class="el" href="class_signal_k_source.html#ac9416b56a4a8fc0e741ec537b2411177">sk_path</a>)</td></tr>
 <tr class="separator:af2ba130c1d59658c144ac3841d967ac8 inherit pub_methods_class_signal_k_source"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,10 +157,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af72ed9c9cf7157a33caad4b930232e69 inherit pub_methods_class_observable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#af72ed9c9cf7157a33caad4b930232e69">attach</a> (std::function&lt; void()&gt; observer)</td></tr>
 <tr class="separator:af72ed9c9cf7157a33caad4b930232e69 inherit pub_methods_class_observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_configurable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_configurable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_configurable.html">Configurable</a></td></tr>
-<tr class="memitem:a5fbc69e52b909b0a2c6e3244025ccb16 inherit pub_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#a5fbc69e52b909b0a2c6e3244025ccb16">Configurable</a> (String <a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a>, String schema)</td></tr>
-<tr class="separator:a5fbc69e52b909b0a2c6e3244025ccb16 inherit pub_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73131c4e7dd8134f23a93de861e1c0e4 inherit pub_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#a73131c4e7dd8134f23a93de861e1c0e4">get_config_schema</a> ()</td></tr>
-<tr class="separator:a73131c4e7dd8134f23a93de861e1c0e4 inherit pub_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8972a439fb9b734ff68d27c699640f78 inherit pub_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#a8972a439fb9b734ff68d27c699640f78">Configurable</a> (String <a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a>)</td></tr>
+<tr class="separator:a8972a439fb9b734ff68d27c699640f78 inherit pub_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a657419f13060caa20c45a41935b9d53a inherit pub_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#a657419f13060caa20c45a41935b9d53a">save_configuration</a> ()</td></tr>
 <tr class="separator:a657419f13060caa20c45a41935b9d53a inherit pub_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_enable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_enable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_enable.html">Enable</a></td></tr>
@@ -174,8 +175,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adaf30ea1027efa0c83c75dfe3afc0c1a inherit pub_methods_class_value_producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1669282467997608ce6164fe4d729bb2 inherit pub_methods_class_value_producer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_value_producer.html#a1669282467997608ce6164fe4d729bb2">connectTo</a> (<a class="el" href="class_value_consumer.html">ValueConsumer</a>&lt; T &gt; *pConsumer, uint8_t inputChannel=0)</td></tr>
 <tr class="separator:a1669282467997608ce6164fe4d729bb2 inherit pub_methods_class_value_producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4194a8cdf7fb741e9bfbd1ba8efd01a9 inherit pub_methods_class_value_producer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_one_to_one_transform.html">OneToOneTransform</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_value_producer.html#a4194a8cdf7fb741e9bfbd1ba8efd01a9">connectTo</a> (<a class="el" href="class_one_to_one_transform.html">OneToOneTransform</a>&lt; T &gt; *pProducerConsumer, uint8_t inputChannel=0)</td></tr>
-<tr class="separator:a4194a8cdf7fb741e9bfbd1ba8efd01a9 inherit pub_methods_class_value_producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64af7a373036743d912876475c566045 inherit pub_methods_class_value_producer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_symmetric_transform.html">SymmetricTransform</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_value_producer.html#a64af7a373036743d912876475c566045">connectTo</a> (<a class="el" href="class_symmetric_transform.html">SymmetricTransform</a>&lt; T &gt; *pProducerConsumer, uint8_t inputChannel=0)</td></tr>
+<tr class="separator:a64af7a373036743d912876475c566045 inherit pub_methods_class_value_producer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -189,8 +190,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab55d4552f3b66d7a198377b2d3fc7fa2 inherit pub_static_methods_class_enable"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enable.html#ab55d4552f3b66d7a198377b2d3fc7fa2">enableAll</a> ()</td></tr>
 <tr class="separator:ab55d4552f3b66d7a198377b2d3fc7fa2 inherit pub_static_methods_class_enable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_configurable"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_configurable')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_configurable.html">Configurable</a></td></tr>
-<tr class="memitem:aef8bf2736ec70470a6dd565b50155133 inherit pub_attribs_class_configurable"><td class="memItemLeft" align="right" valign="top">const String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a></td></tr>
-<tr class="separator:aef8bf2736ec70470a6dd565b50155133 inherit pub_attribs_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa54fa6156d9c7f5848d670bd9b18aa9 inherit pub_attribs_class_configurable"><td class="memItemLeft" align="right" valign="top">const String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a></td></tr>
+<tr class="separator:aaa54fa6156d9c7f5848d670bd9b18aa9 inherit pub_attribs_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_configurable"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_configurable')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_configurable.html">Configurable</a></td></tr>
 <tr class="memitem:ac2ba4044c81acc2fc6bf95cce411f6a4 inherit pro_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#ac2ba4044c81acc2fc6bf95cce411f6a4">load_configuration</a> ()</td></tr>
 <tr class="separator:ac2ba4044c81acc2fc6bf95cce411f6a4 inherit pro_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,8 +238,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a310faf6e412b355b3c971fb79d36c075"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a310faf6e412b355b3c971fb79d36c075">&#9670;&nbsp;</a></span>Passthrough() <span class="overload">[2/2]</span></h2>
+<a id="a63f4217398589b274a2a2c4b7f48c8e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f4217398589b274a2a2c4b7f48c8e5">&#9670;&nbsp;</a></span>Passthrough() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,13 +259,7 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>id</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>schema</em> = <code>&quot;&quot;</code>&#160;</td>
+          <td class="paramname"><em>config_path</em> = <code>&quot;&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -284,8 +279,8 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a87f840179756a79a9d19e53eb573164a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87f840179756a79a9d19e53eb573164a">&#9670;&nbsp;</a></span>as_json()</h2>
+<a id="acc3e3b30c646d1e49bc9b003e7edb97e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc3e3b30c646d1e49bc9b003e7edb97e">&#9670;&nbsp;</a></span>as_signalK()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +291,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String <a class="el" href="class_passthrough.html">Passthrough</a>&lt; T &gt;::as_json </td>
+          <td class="memname">String <a class="el" href="class_passthrough.html">Passthrough</a>&lt; T &gt;::as_signalK </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -310,9 +305,41 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Returns the data to be reported to the server as a SignalK json string. </p>
 
-<p>Reimplemented from <a class="el" href="class_signal_k_source.html#a526b4a692616b8a81ad9669226ae369d">SignalKSource</a>.</p>
+<p>Reimplemented from <a class="el" href="class_signal_k_source.html#aadf429c623392e8717957bc3c09852d0">SignalKSource</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="passthrough_8h_source.html#l00025">25</a> of file <a class="el" href="passthrough_8h_source.html">passthrough.h</a>.</p>
+
+</div>
+</div>
+<a id="aa19d8446db1373f48ca644f3463580a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa19d8446db1373f48ca644f3463580a8">&#9670;&nbsp;</a></span>get_config_schema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String <a class="el" href="class_passthrough.html">Passthrough</a>&lt; T &gt;::get_config_schema </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns a configuration schema that specifies the key/value pairs that can be expected when calling <a class="el" href="class_passthrough.html#aecaa7961190394983b550495da47ee9c">get_configuration()</a>, or are expected by <a class="el" href="class_passthrough.html#ae3a80dd8daac718da3c75eb9eb45197a">set_configuration()</a>. The schema will be in JSON Schema format </p><dl class="section see"><dt>See also</dt><dd><a href="https://json-schema.org">https://json-schema.org</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_configurable.html#a73131c4e7dd8134f23a93de861e1c0e4">Configurable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="passthrough_8h_source.html#l00042">42</a> of file <a class="el" href="passthrough_8h_source.html">passthrough.h</a>.</p>
 
 </div>
 </div>
@@ -341,6 +368,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns the current configuration data as a JsonObject. In general, the current state of local member variables are saved to a new object created with JsonBuffer::createObject() and returned. </p>
 
 <p>Reimplemented from <a class="el" href="class_configurable.html#a787559a1a907f909d6088d2ec6825b44">Configurable</a>.</p>
 
@@ -373,10 +401,11 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Sets the current state of local member variables using the data stored in config. </p>
 
 <p>Reimplemented from <a class="el" href="class_configurable.html#a6e0281fe25cfbdf024bdb05147ffb52b">Configurable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="passthrough_8h_source.html#l00042">42</a> of file <a class="el" href="passthrough_8h_source.html">passthrough.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="passthrough_8h_source.html#l00053">53</a> of file <a class="el" href="passthrough_8h_source.html">passthrough.h</a>.</p>
 
 </div>
 </div>
@@ -426,6 +455,15 @@ template&lt;typename T &gt; </div>
 <p>Reimplemented from <a class="el" href="class_value_consumer.html#a7bf920e5ad5f171ec6e2aeda056ff01f">ValueConsumer&lt; T &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="passthrough_8h_source.html#l00019">19</a> of file <a class="el" href="passthrough_8h_source.html">passthrough.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_passthrough_a401a7f308b76eac7ed7d90a618d997db_cgraph.png" border="0" usemap="#class_passthrough_a401a7f308b76eac7ed7d90a618d997db_cgraph" alt=""/></div>
+<map name="class_passthrough_a401a7f308b76eac7ed7d90a618d997db_cgraph" id="class_passthrough_a401a7f308b76eac7ed7d90a618d997db_cgraph">
+<area shape="rect"  title=" " alt="" coords="5,5,163,31"/>
+<area shape="rect"  href="class_observable.html#a099bf851e05bb8c1a25e83f2a1389e58" title=" " alt="" coords="211,5,340,31"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -12,12 +12,13 @@
 
 class Networking : public Configurable {
  public:
-  Networking(String id, String schema="");
+  Networking(String config_path);
   void setup(std::function<void(bool)> connection_cb);
   ObservableValue<String>* get_hostname();
   virtual JsonObject& get_configuration(JsonBuffer& buf) override final;
   virtual bool set_configuration(const JsonObject& config) override final;
-
+  virtual String get_config_schema() override;
+  
   void set_hostname(String hostname);
 
   void reset_settings();

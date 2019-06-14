@@ -9,11 +9,13 @@
 #include "system/configurable.h"
 #include "system/signal_k.h"
 
+static const char* NULL_AUTH_TOKEN = "";
+
 enum ConnectionState { disconnected, connecting, connected };
 
 class WSClient : public Configurable {
  public:
-  WSClient(String id, String schema, SKDelta* sk_delta,
+  WSClient(String config_path, SKDelta* sk_delta,
             std::function<void(bool)> connected_cb,
             void_cb_func delta_cb);
   void enable();
@@ -29,13 +31,16 @@ class WSClient : public Configurable {
 
   virtual JsonObject& get_configuration(JsonBuffer& buf) override final;
   virtual bool set_configuration(const JsonObject& config) override final;
+  virtual String get_config_schema() override;
 
  private:
-  String host = "";
-  uint16_t port = 80;
+  String server_address = "";
+  uint16_t server_port = 80;
   String client_id = "";
   String polling_href = "";
-  String auth_token = "no-token";
+  String auth_token = NULL_AUTH_TOKEN;
+  bool server_detected = false;
+
   // FIXME: replace with a single connection_state enum
   ConnectionState connection_state = disconnected;
   WebSocketsClient client;
@@ -47,7 +52,7 @@ class WSClient : public Configurable {
   void connect_ws(const String host, const uint16_t port);
   std::function<void(bool)> connected_cb;
   void_cb_func delta_cb;
-  bool get_mdns_service(String &host, uint16_t& port);
+  bool get_mdns_service(String &server_address, uint16_t& server_port);
 };
 
 #endif

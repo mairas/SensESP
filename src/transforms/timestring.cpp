@@ -1,9 +1,9 @@
 #include "timestring.h"
 
 
-TimeString::TimeString(String path, String id, String schema) :
+TimeString::TimeString(String path, String config_path) :
     ValueConsumer<time_t>(),
-    StringTransform{ path, id, schema } {
+    StringTransform{ path, config_path } {
   load_configuration();
 }
 
@@ -14,7 +14,7 @@ void TimeString::set_input(time_t input, uint8_t inputChannel) {
   notify();
 }
 
-String TimeString::as_json() {
+String TimeString::as_signalK() {
   DynamicJsonBuffer jsonBuffer;
   String json;
   JsonObject& root = jsonBuffer.createObject();
@@ -29,6 +29,18 @@ JsonObject& TimeString::get_configuration(JsonBuffer& buf) {
   root["sk_path"] = sk_path;
   root["value"] = output;
   return root;
+}
+
+static const char SCHEMA[] PROGMEM = R"({
+    "type": "object",
+    "properties": {
+        "sk_path": { "title": "SignalK Path", "type": "string" },
+        "value": { "title": "Last value", "type" : "string", "readOnly": true }
+    }
+  })";
+
+String TimeString::get_config_schema() {
+  return FPSTR(SCHEMA);
 }
 
 bool TimeString::set_configuration(const JsonObject& config) {

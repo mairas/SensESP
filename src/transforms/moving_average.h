@@ -6,14 +6,15 @@
 #include "transform.h"
 
 // y = k * 1/n * \sum_k=1^n(x_k)
-class MovingAverage : public OneToOneTransform<float> {
+class MovingAverage : public SymmetricTransform<float> {
 
  public:
-  MovingAverage(String sk_path, int n, float k=1., String id="", String schema="");
+  MovingAverage(String sk_path, int n, float k=1., String config_path="");
   virtual void set_input(float input, uint8_t inputChannel = 0) override final;
-  virtual String as_json() override final;
+  virtual String as_signalK() override final;
   virtual JsonObject& get_configuration(JsonBuffer& buf) override final;
   virtual bool set_configuration(const JsonObject& config) override final;
+  virtual String get_config_schema() override;
 
  private:
   std::vector<float> buf;

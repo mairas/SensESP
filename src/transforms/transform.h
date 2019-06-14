@@ -26,19 +26,19 @@
  * save the configuration data in.
  */
 class TransformBase : public SignalKSource,
-                      public Configurable, 
+                      public Configurable,
                       public Enable {
  public:
-    TransformBase(String sk_path, String id="", String schema="");
+    TransformBase(String sk_path, String config_path="");
 
-  
+
   // Primary purpose of this was to supply SignalK sources
   // (now handled by SignalKSource::get_sources). Should
   // this be deprecated?
   static const std::set<TransformBase*>& get_transforms() {
     return transforms;
   }
- 
+
   private:
     static std::set<TransformBase*> transforms;
 };
@@ -52,8 +52,8 @@ class TransformBase : public SignalKSource,
 template <typename T>
 class Transform : public TransformBase, public ValueProducer<T> {
     public:
-      Transform(String sk_path, String id="", String schema="") :
-         TransformBase(sk_path, id, schema), ValueProducer<T>() {
+      Transform(String sk_path, String config_path="") :
+         TransformBase(sk_path, config_path), ValueProducer<T>() {
       }
 };
 
@@ -65,22 +65,53 @@ typedef Transform<String> StringTransform;
 
 
 /**
- * A OneToOneTransform is a common type of transform that consumes, transforms,
+ * A SymmetricTransform is a common type of transform that consumes, transforms,
  * then outputs values of the same data type.
  */
 template <typename T>
-class OneToOneTransform : public ValueConsumer<T>, public Transform<T> {
+class SymmetricTransform : public ValueConsumer<T>, public Transform<T> {
 
-  public: 
-     OneToOneTransform(String sk_path, String id="", String schema="") :
+  public:
+     SymmetricTransform(String sk_path, String config_path="") :
       ValueConsumer<T>(),
-      Transform<T>(sk_path, id, schema) {
+      Transform<T>(sk_path, config_path) {
+  }
+
+  /**
+   * A convenience method that allows up to five producers to be
+   * quickly connected to the input of the ValueConsumer side of this
+   * transform.  The first producer will be connected to input
+   * channel zero, the second one to input channel 1, etc.
+   * "this" is returned, which allows the ValueProducer side
+   * of this transform to then be wired to other transforms via
+   * a call to connectTo().
+   */
+  SymmetricTransform<T>* connectFrom(ValueProducer<T>* pProducer0,
+                                     ValueProducer<T>* pProducer1 = NULL,
+                                     ValueProducer<T>* pProducer2 = NULL,
+                                     ValueProducer<T>* pProducer3 = NULL,
+                                     ValueProducer<T>* pProducer4 = NULL) {
+
+      pProducer0->connectTo(this, 0);
+      if (pProducer1 != NULL) {
+        pProducer1->connectTo(this, 1);
+      }
+      if (pProducer2 != NULL) {
+        pProducer2->connectTo(this, 2);
+      }
+      if (pProducer3 != NULL) {
+        pProducer3->connectTo(this, 3);
+      }
+      if (pProducer4 != NULL) {
+        pProducer4->connectTo(this, 4);
+      }
+      return this;
   }
 };
 
-typedef OneToOneTransform<float> OneToOneNumericTransform;
-typedef OneToOneTransform<int> OneToOneIntegerTransform;
-typedef OneToOneTransform<bool> OneToOneBooleanTransform;
-typedef OneToOneTransform<String> OneToOneStringTransform;
+typedef SymmetricTransform<float> SymmetricNumericTransform;
+typedef SymmetricTransform<int> SymmetricIntegerTransform;
+typedef SymmetricTransform<bool> SymmetricBooleanTransform;
+typedef SymmetricTransform<String> SymmetricStringTransform;
 
 #endif

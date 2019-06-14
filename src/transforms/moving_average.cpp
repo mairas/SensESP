@@ -2,8 +2,8 @@
 
 // MovingAverage
 
-MovingAverage::MovingAverage(String path, int n, float k, String id, String schema) :
-    OneToOneTransform<float>{ path, id, schema },
+MovingAverage::MovingAverage(String path, int n, float k, String config_path) :
+    SymmetricTransform<float>{ path, config_path },
       n{ n },
       k{ k } {
   buf.resize(n, 0);
@@ -18,7 +18,7 @@ void MovingAverage::set_input(float input, uint8_t inputChannel) {
   notify();
 }
 
-String MovingAverage::as_json() {
+String MovingAverage::as_signalK() {
   DynamicJsonBuffer jsonBuffer;
   String json;
   JsonObject& root = jsonBuffer.createObject();
@@ -36,6 +36,20 @@ JsonObject& MovingAverage::get_configuration(JsonBuffer& buf) {
   root["value"] = output;
   return root;
 }
+
+static const char SCHEMA[] PROGMEM = R"({
+    "type": "object",
+    "properties": {
+        "sk_path": { "title": "SignalK Path", "type": "string" },
+        "n": { "title": "Number of samples in average", "type": "integer" }
+        "k": { "title": "Multiplier", "type": "number" }
+    }
+  })";
+
+String MovingAverage::get_config_schema() {
+  return FPSTR(SCHEMA);
+}
+
 
 bool MovingAverage::set_configuration(const JsonObject& config) {
   String expected[] = {"k", "sk_path"};

@@ -23,22 +23,29 @@ var hierarchy =
       [ "Networking", "class_networking.html", null ],
       [ "TransformBase", "class_transform_base.html", [
         [ "Transform< T >", "class_transform.html", [
-          [ "OneToOneTransform< T >", "class_one_to_one_transform.html", [
+          [ "SymmetricTransform< T >", "class_symmetric_transform.html", [
+            [ "Debounce", "class_debounce.html", null ],
             [ "Passthrough< T >", "class_passthrough.html", null ]
           ] ],
           [ "TimeString", "class_time_string.html", null ]
         ] ],
         [ "Transform< float >", "class_transform.html", [
           [ "Frequency", "class_frequency.html", null ],
-          [ "OneToOneTransform< float >", "class_one_to_one_transform.html", [
+          [ "SymmetricTransform< float >", "class_symmetric_transform.html", [
             [ "Difference", "class_difference.html", null ],
             [ "Integrator", "class_integrator.html", null ],
-            [ "Linear", "class_linear.html", null ],
-            [ "MovingAverage", "class_moving_average.html", null ]
+            [ "Interpolate", "class_interpolate.html", [
+              [ "TemperatureInterpreter", "class_temperature_interpreter.html", null ]
+            ] ],
+            [ "Linear", "class_linear.html", [
+              [ "AnalogVoltage", "class_analog_voltage.html", null ]
+            ] ],
+            [ "MovingAverage", "class_moving_average.html", null ],
+            [ "VoltageDividerR2", "class_voltage_divider_r2.html", null ]
           ] ]
         ] ],
         [ "Transform< Position >", "class_transform.html", [
-          [ "OneToOneTransform< Position >", "class_one_to_one_transform.html", [
+          [ "SymmetricTransform< Position >", "class_symmetric_transform.html", [
             [ "GNSSPosition", "class_g_n_s_s_position.html", null ]
           ] ]
         ] ]
@@ -93,6 +100,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "Position", "struct_position.html", null ],
+    [ "Interpolate::Sample", "class_interpolate_1_1_sample.html", null ],
     [ "SensESPApp", "class_sens_e_s_p_app.html", null ],
     [ "SentenceParser", "class_sentence_parser.html", [
       [ "GPGGASentenceParser", "class_g_p_g_g_a_sentence_parser.html", null ],
@@ -105,13 +113,13 @@ var hierarchy =
     [ "SKDelta", "class_s_k_delta.html", null ],
     [ "ValueConsumer< T >", "class_value_consumer.html", [
       [ "Frequency", "class_frequency.html", null ],
-      [ "OneToOneTransform< T >", "class_one_to_one_transform.html", null ]
+      [ "SymmetricTransform< T >", "class_symmetric_transform.html", null ]
     ] ],
     [ "ValueConsumer< float >", "class_value_consumer.html", [
-      [ "OneToOneTransform< float >", "class_one_to_one_transform.html", null ]
+      [ "SymmetricTransform< float >", "class_symmetric_transform.html", null ]
     ] ],
     [ "ValueConsumer< Position >", "class_value_consumer.html", [
-      [ "OneToOneTransform< Position >", "class_one_to_one_transform.html", null ]
+      [ "SymmetricTransform< Position >", "class_symmetric_transform.html", null ]
     ] ],
     [ "ValueConsumer< time_t >", "class_value_consumer.html", [
       [ "TimeString", "class_time_string.html", null ]

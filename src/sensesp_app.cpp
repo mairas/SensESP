@@ -30,7 +30,7 @@ SensESPApp::SensESPApp() {
   }
 
   // create the networking object
-  networking = new Networking("/system/networking", "");
+  networking = new Networking("/system/networking");
   ObservableValue<String>* hostname = networking->get_hostname();
 
   // setup standard devices and their transforms
@@ -64,7 +64,7 @@ SensESPApp::SensESPApp() {
     this->led_blinker.flip();
   };
   this->ws_client = new WSClient(
-    "/system/sk", "",
+    "/system/sk", 
     sk_delta, ws_connected_cb, ws_delta_cb);
 }
 
@@ -116,7 +116,7 @@ void SensESPApp::enable() {
     if (sigkSource->get_sk_path() != "") {
       debugI("Connecting SignalK source %s", sigkSource->get_sk_path().c_str());
       sigkSource->attach([sigkSource, this](){
-        this->sk_delta->append(sigkSource->as_json());
+        this->sk_delta->append(sigkSource->as_signalK());
       });
     }
   }

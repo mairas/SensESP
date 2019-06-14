@@ -5,8 +5,8 @@
 
 // Integrator
 
-Integrator::Integrator(String path, float k, float value, String id, String schema) :
-    OneToOneTransform<float>{ path, id, schema },
+Integrator::Integrator(String path, float k, float value, String config_path) :
+    SymmetricTransform<float>{ path, config_path },
       k{ k } {
   output = value;
   load_configuration();
@@ -25,7 +25,7 @@ void Integrator::set_input(float input, uint8_t inputChannel) {
   notify();
 }
 
-String Integrator::as_json() {
+String Integrator::as_signalK() {
   DynamicJsonBuffer jsonBuffer;
   String json;
   JsonObject& root = jsonBuffer.createObject();
@@ -43,8 +43,21 @@ JsonObject& Integrator::get_configuration(JsonBuffer& buf) {
   return root;
 }
 
+static const char SCHEMA[] PROGMEM = R"({
+    "type": "object",
+    "properties": {
+        "sk_path": { "title": "SignalK Path", "type": "string" },
+        "k": { "title": "Multiplier", "type": "number" },
+        "value": { "title": "Current value", "type" : "number", "readOnly": false }
+    }
+  })";
+
+String Integrator::get_config_schema() {
+  return FPSTR(SCHEMA);
+}
+
 bool Integrator::set_configuration(const JsonObject& config) {
-  String expected[] = {"k", "value", "sk_path"};
+  String expected[] = {"k", "sk_path"};
   for (auto str : expected) {
     if (!config.containsKey(str)) {
       return false;

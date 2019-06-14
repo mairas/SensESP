@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SensESP
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
    <div id="projectbrief">Universal Signal K sensor framework for ESP8266 and ESP32</div>
   </td>
@@ -100,17 +100,17 @@ $(document).ready(function(){initNavTree('class_networking.html','');});
 <div class="dynheader">
 Inheritance diagram for Networking:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_networking.png" usemap="#Networking_map" alt=""/>
-  <map id="Networking_map" name="Networking_map">
-<area href="class_configurable.html" alt="Configurable" shape="rect" coords="0,0,85,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_networking__inherit__graph.png" border="0" usemap="#_networking_inherit__map" alt="Inheritance graph"/></div>
+<map name="_networking_inherit__map" id="_networking_inherit__map">
+<area shape="rect"  title=" " alt="" coords="10,79,98,104"/>
+<area shape="rect"  href="class_configurable.html" title=" " alt="" coords="5,5,102,31"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a631fac3c435ec16b256f9adacdc49f63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a631fac3c435ec16b256f9adacdc49f63">Networking</a> (String <a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a>, String schema=&quot;&quot;)</td></tr>
-<tr class="separator:a631fac3c435ec16b256f9adacdc49f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b8c4d193f59be9aea6b09fd36b4f956"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a4b8c4d193f59be9aea6b09fd36b4f956">Networking</a> (String <a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a>)</td></tr>
+<tr class="separator:a4b8c4d193f59be9aea6b09fd36b4f956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94815dd34af734e9fc3839cbe6279355"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a94815dd34af734e9fc3839cbe6279355">setup</a> (std::function&lt; void(bool)&gt; connection_cb)</td></tr>
 <tr class="separator:a94815dd34af734e9fc3839cbe6279355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a3cac2e878aa2c513451f235c70aff7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_observable_value.html">ObservableValue</a>&lt; String &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a7a3cac2e878aa2c513451f235c70aff7">get_hostname</a> ()</td></tr>
@@ -119,15 +119,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2b8f2f52b332dc0af375113a64881a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59d475a2f12b88ef8334274a9a0b1cee"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a59d475a2f12b88ef8334274a9a0b1cee">set_configuration</a> (const JsonObject &amp;config) override final</td></tr>
 <tr class="separator:a59d475a2f12b88ef8334274a9a0b1cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253025ed2a3c36eb998e7b900155359e"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a253025ed2a3c36eb998e7b900155359e">get_config_schema</a> () override</td></tr>
+<tr class="separator:a253025ed2a3c36eb998e7b900155359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a500aa01c7d7da3d823a43c40212353f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a500aa01c7d7da3d823a43c40212353f5">set_hostname</a> (String hostname)</td></tr>
 <tr class="separator:a500aa01c7d7da3d823a43c40212353f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a207f306c10b8f65ca0904cc26a9ef15c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_networking.html#a207f306c10b8f65ca0904cc26a9ef15c">reset_settings</a> ()</td></tr>
 <tr class="separator:a207f306c10b8f65ca0904cc26a9ef15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_configurable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_configurable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_configurable.html">Configurable</a></td></tr>
-<tr class="memitem:a5fbc69e52b909b0a2c6e3244025ccb16 inherit pub_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#a5fbc69e52b909b0a2c6e3244025ccb16">Configurable</a> (String <a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a>, String schema)</td></tr>
-<tr class="separator:a5fbc69e52b909b0a2c6e3244025ccb16 inherit pub_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73131c4e7dd8134f23a93de861e1c0e4 inherit pub_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#a73131c4e7dd8134f23a93de861e1c0e4">get_config_schema</a> ()</td></tr>
-<tr class="separator:a73131c4e7dd8134f23a93de861e1c0e4 inherit pub_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8972a439fb9b734ff68d27c699640f78 inherit pub_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#a8972a439fb9b734ff68d27c699640f78">Configurable</a> (String <a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a>)</td></tr>
+<tr class="separator:a8972a439fb9b734ff68d27c699640f78 inherit pub_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a657419f13060caa20c45a41935b9d53a inherit pub_methods_class_configurable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#a657419f13060caa20c45a41935b9d53a">save_configuration</a> ()</td></tr>
 <tr class="separator:a657419f13060caa20c45a41935b9d53a inherit pub_methods_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -142,15 +142,15 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_class_configurable"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_configurable')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_configurable.html">Configurable</a></td></tr>
-<tr class="memitem:aef8bf2736ec70470a6dd565b50155133 inherit pub_attribs_class_configurable"><td class="memItemLeft" align="right" valign="top">const String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#aef8bf2736ec70470a6dd565b50155133">id</a></td></tr>
-<tr class="separator:aef8bf2736ec70470a6dd565b50155133 inherit pub_attribs_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa54fa6156d9c7f5848d670bd9b18aa9 inherit pub_attribs_class_configurable"><td class="memItemLeft" align="right" valign="top">const String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_configurable.html#aaa54fa6156d9c7f5848d670bd9b18aa9">config_path</a></td></tr>
+<tr class="separator:aaa54fa6156d9c7f5848d670bd9b18aa9 inherit pub_attribs_class_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="networking_8h_source.html#l00013">13</a> of file <a class="el" href="networking_8h_source.html">networking.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a631fac3c435ec16b256f9adacdc49f63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a631fac3c435ec16b256f9adacdc49f63">&#9670;&nbsp;</a></span>Networking()</h2>
+<a id="a4b8c4d193f59be9aea6b09fd36b4f956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8c4d193f59be9aea6b09fd36b4f956">&#9670;&nbsp;</a></span>Networking()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,18 +159,8 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">Networking::Networking </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>config_path</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>schema</em> = <code>&quot;&quot;</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -204,6 +194,46 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00029">29</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_networking_ae4b12924970227730df3377144301a7c_icgraph.png" border="0" usemap="#class_networking_ae4b12924970227730df3377144301a7c_icgraph" alt=""/></div>
+<map name="class_networking_ae4b12924970227730df3377144301a7c_icgraph" id="class_networking_ae4b12924970227730df3377144301a7c_icgraph">
+<area shape="rect"  title=" " alt="" coords="378,5,580,31"/>
+<area shape="rect"  href="class_networking.html#a94815dd34af734e9fc3839cbe6279355" title=" " alt="" coords="202,5,330,31"/>
+<area shape="rect"  href="class_sens_e_s_p_app.html#a3d70c22bfd1bf842f6daa83ab2f50f79" title=" " alt="" coords="5,5,154,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a253025ed2a3c36eb998e7b900155359e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253025ed2a3c36eb998e7b900155359e">&#9670;&nbsp;</a></span>get_config_schema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String Networking::get_config_schema </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns a configuration schema that specifies the key/value pairs that can be expected when calling <a class="el" href="class_networking.html#a2b8f2f52b332dc0af375113a64881a8a">get_configuration()</a>, or are expected by <a class="el" href="class_networking.html#a59d475a2f12b88ef8334274a9a0b1cee">set_configuration()</a>. The schema will be in JSON Schema format </p><dl class="section see"><dt>See also</dt><dd><a href="https://json-schema.org">https://json-schema.org</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_configurable.html#a73131c4e7dd8134f23a93de861e1c0e4">Configurable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00081">81</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
 
 </div>
 </div>
@@ -230,10 +260,20 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns the current configuration data as a JsonObject. In general, the current state of local member variables are saved to a new object created with JsonBuffer::createObject() and returned. </p>
 
 <p>Reimplemented from <a class="el" href="class_configurable.html#a787559a1a907f909d6088d2ec6825b44">Configurable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00080">80</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00091">91</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_networking_a2b8f2f52b332dc0af375113a64881a8a_cgraph.png" border="0" usemap="#class_networking_a2b8f2f52b332dc0af375113a64881a8a_cgraph" alt=""/></div>
+<map name="class_networking_a2b8f2f52b332dc0af375113a64881a8a_cgraph" id="class_networking_a2b8f2f52b332dc0af375113a64881a8a_cgraph">
+<area shape="rect"  title=" " alt="" coords="5,5,203,31"/>
+<area shape="rect"  href="class_value_producer.html#adaf30ea1027efa0c83c75dfe3afc0c1a" title=" " alt="" coords="251,5,386,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -253,6 +293,17 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00071">71</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_networking_a7a3cac2e878aa2c513451f235c70aff7_icgraph.png" border="0" usemap="#class_networking_a7a3cac2e878aa2c513451f235c70aff7_icgraph" alt=""/></div>
+<map name="class_networking_a7a3cac2e878aa2c513451f235c70aff7_icgraph" id="class_networking_a7a3cac2e878aa2c513451f235c70aff7_icgraph">
+<area shape="rect"  title=" " alt="" coords="246,55,426,80"/>
+<area shape="rect"  href="class_sens_e_s_p_app.html#a092f600dda1a51189bc2c9fd5de360e8" title=" " alt="" coords="8,5,196,31"/>
+<area shape="rect"  href="class_sens_e_s_p_app.html#a3d70c22bfd1bf842f6daa83ab2f50f79" title=" " alt="" coords="28,55,176,80"/>
+<area shape="rect"  href="class_sens_e_s_p_app.html#ac068882b9e9f6092da0818c5e42b48b8" title=" " alt="" coords="5,104,198,129"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -271,7 +322,17 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00094">94</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00105">105</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_networking_a207f306c10b8f65ca0904cc26a9ef15c_icgraph.png" border="0" usemap="#class_networking_a207f306c10b8f65ca0904cc26a9ef15c_icgraph" alt=""/></div>
+<map name="class_networking_a207f306c10b8f65ca0904cc26a9ef15c_icgraph" id="class_networking_a207f306c10b8f65ca0904cc26a9ef15c_icgraph">
+<area shape="rect"  title=" " alt="" coords="428,5,606,31"/>
+<area shape="rect"  href="class_sens_e_s_p_app.html#a0f7605a2c63a3ed250e1c742608956b2" title=" " alt="" coords="242,5,380,31"/>
+<area shape="rect"  href="class_sens_e_s_p_app.html#a092f600dda1a51189bc2c9fd5de360e8" title=" " alt="" coords="5,5,194,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -298,10 +359,20 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Sets the current state of local member variables using the data stored in config. </p>
 
 <p>Reimplemented from <a class="el" href="class_configurable.html#a6e0281fe25cfbdf024bdb05147ffb52b">Configurable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00086">86</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00097">97</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_networking_a59d475a2f12b88ef8334274a9a0b1cee_cgraph.png" border="0" usemap="#class_networking_a59d475a2f12b88ef8334274a9a0b1cee_cgraph" alt=""/></div>
+<map name="class_networking_a59d475a2f12b88ef8334274a9a0b1cee_cgraph" id="class_networking_a59d475a2f12b88ef8334274a9a0b1cee_cgraph">
+<area shape="rect"  title=" " alt="" coords="5,5,202,31"/>
+<area shape="rect"  href="class_observable_value.html#a51cf25d4951d3214021da0c25985838d" title=" " alt="" coords="250,5,398,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -342,6 +413,29 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="networking_8cpp_source.html#l00036">36</a> of file <a class="el" href="networking_8cpp_source.html">networking.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_networking_a94815dd34af734e9fc3839cbe6279355_cgraph.png" border="0" usemap="#class_networking_a94815dd34af734e9fc3839cbe6279355_cgraph" alt=""/></div>
+<map name="class_networking_a94815dd34af734e9fc3839cbe6279355_cgraph" id="class_networking_a94815dd34af734e9fc3839cbe6279355_cgraph">
+<area shape="rect"  title=" " alt="" coords="5,104,133,129"/>
+<area shape="rect"  href="networking_8cpp.html#a7930cb24915efc348611f4c48d1d5e4c" title=" " alt="" coords="208,5,357,31"/>
+<area shape="rect"  href="class_value_producer.html#adaf30ea1027efa0c83c75dfe3afc0c1a" title=" " alt="" coords="215,55,350,80"/>
+<area shape="rect"  href="class_observable_value.html#a51cf25d4951d3214021da0c25985838d" title=" " alt="" coords="209,104,356,129"/>
+<area shape="rect"  href="class_configurable.html#a657419f13060caa20c45a41935b9d53a" title=" " alt="" coords="216,153,349,192"/>
+<area shape="rect"  href="class_networking.html#ae4b12924970227730df3377144301a7c" title=" " alt="" coords="181,216,384,241"/>
+<area shape="rect"  href="class_configurable.html#a787559a1a907f909d6088d2ec6825b44" title=" " alt="" coords="432,160,638,185"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_networking_a94815dd34af734e9fc3839cbe6279355_icgraph.png" border="0" usemap="#class_networking_a94815dd34af734e9fc3839cbe6279355_icgraph" alt=""/></div>
+<map name="class_networking_a94815dd34af734e9fc3839cbe6279355_icgraph" id="class_networking_a94815dd34af734e9fc3839cbe6279355_icgraph">
+<area shape="rect"  title=" " alt="" coords="202,5,330,31"/>
+<area shape="rect"  href="class_sens_e_s_p_app.html#a3d70c22bfd1bf842f6daa83ab2f50f79" title=" " alt="" coords="5,5,154,31"/>
+</map>
+</div>
 
 </div>
 </div>
