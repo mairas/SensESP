@@ -95,8 +95,6 @@ class SensESPApp {
   SKDeltaQueue* sk_delta_;
   WSClient* ws_client_;
 
-  void set_wifi(String ssid, String password);
-
   friend class HTTPServer;
   friend class SensESPAppBuilder;
 };
