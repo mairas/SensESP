@@ -39,7 +39,8 @@ class SensESPBareAppBuilder {
 
   virtual SensESPBareAppBuilder* set_ota(String password) {
     enable_networking();
-    app_->set_ota(password);
+    // TODO: implement
+    //app_->set_ota(password);
     return this;
   }
 
