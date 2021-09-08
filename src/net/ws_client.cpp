@@ -72,7 +72,7 @@ void WSClient::enable() {
   app.onDelay(0, [this]() { this->connect(); });
   app.onRepeat(20, [this]() { this->loop(); });
   app.onRepeat(5, [this]() { this->send_delta(); });
-  app.onRepeat(10000, [this]() { this->connect_loop(); });
+  app.onRepeat(1000, [this]() { this->connect_loop(); });
 }
 
 void WSClient::connect_loop() {
