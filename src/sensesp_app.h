@@ -54,6 +54,18 @@ class SensESPApp {
  protected:
   // setters for all constructor arguments
 
+  const SensESPApp* set_enable_networking() {
+    this->enable_networking_ = true;
+    return this;
+  }
+  const SensESPApp* set_enable_http_server() {
+    this->enable_http_server_ = true;
+    return this;
+  }
+  const SensESPApp* set_enable_websocket_client() {
+    this->enable_websocket_client_ = true;
+    return this;
+  }
   const SensESPApp* set_preset_hostname(String preset_hostname) {
     this->preset_hostname_ = preset_hostname;
     return this;
@@ -86,6 +98,10 @@ class SensESPApp {
   String sk_server_address_ = "";
   uint16_t sk_server_port_ = 0;
 
+  bool enable_networking_ = false;
+  bool enable_http_server_ = false;
+  bool enable_websocket_client_ = false;
+
   void initialize();
 
   HTTPServer* http_server_;
@@ -96,7 +112,7 @@ class SensESPApp {
   WSClient* ws_client_;
 
   friend class HTTPServer;
-  friend class SensESPAppBuilder;
+  friend class SensESPBareAppBuilder;
 };
 
 extern SensESPApp* sensesp_app;
