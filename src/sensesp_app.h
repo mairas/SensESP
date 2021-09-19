@@ -44,7 +44,7 @@ class SensESPApp {
   void setup();
   void enable();
   void reset();
-  String get_hostname();
+  ObservableValue<String>* get_hostname_observable();
 
   // getters for internal members
   SKDeltaQueue* get_sk_delta() { return this->sk_delta_queue_; }
@@ -94,12 +94,14 @@ class SensESPApp {
     return this;
   }
 
- private:
+ protected:
   String preset_hostname_ = "SensESP";
   String ssid_ = "";
   String wifi_password_ = "";
   String sk_server_address_ = "";
   uint16_t sk_server_port_ = 0;
+
+  ObservableValue<String>* hostname_;
 
   bool enable_networking_ = false;
   bool enable_http_server_ = false;
