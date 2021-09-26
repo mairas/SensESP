@@ -13,6 +13,7 @@
 
 #include "system/configurable.h"
 #include "system/enableable.h"
+#include "system/resettable.h"
 #include "system/observablevalue.h"
 #include "system/valueproducer.h"
 
@@ -26,15 +27,16 @@ enum class WifiState {
 /**
  * @brief Manages the ESP's connection to the Wifi network.
  */
-class Networking : public Configurable, public Enableable, public ValueProducer<WifiState> {
+class Networking : public Configurable, public Enableable, public Resettable, public ValueProducer<WifiState> {
  public:
   Networking(String config_path, String ssid, String password, String hostname);
   virtual void enable() override;
+  virtual void reset() override;
+
   virtual void get_configuration(JsonObject& doc) override final;
   virtual bool set_configuration(const JsonObject& config) override final;
   virtual String get_config_schema() override;
 
-  void reset_settings();
 
  protected:
   void setup_saved_ssid();
