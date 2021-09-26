@@ -108,8 +108,6 @@ class SensESPApp {
   bool enable_http_server_ = false;
   bool enable_websocket_client_ = false;
 
-  void initialize();
-
   Filesystem* filesystem_;
   RemoteDebugger* remote_debugger_;
   MDNSDiscovery* mdns_discovery_;
