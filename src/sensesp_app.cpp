@@ -70,13 +70,13 @@ void SensESPApp::setup() {
   // create a remote debugger object
   remote_debugger_ = new RemoteDebugger();
 
-  // create the SK delta object
-  // TODO: one queue per output path
-  sk_delta_queue_ = new SKDeltaQueue();
-
   // create the HTTP server
   // TODO: make conditional
   this->http_server_ = new HTTPServer([this]() { this->reset(); });
+
+  // create the SK delta object
+  // TODO: one queue per output path
+  sk_delta_queue_ = new SKDeltaQueue();
 
   // create the websocket client
   // TODO: make conditional
