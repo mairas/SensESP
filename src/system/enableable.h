@@ -1,11 +1,7 @@
 #ifndef _enableable_H_
 #define _enableable_H_
 
-#include <stdint.h>
-
 #include <queue>
-
-#include "sensesp.h"
 
 class EnableableCompare;
 
@@ -43,13 +39,6 @@ class Enableable {
    * build_unflags = -fno-rtti
    */
   static void enable_all();
-
-  // FIXME: Uncomment the following once the PIO Xtensa toolchain is updated
-  // [[deprecated("Use enable_all() instead.")]]
-  static void enableAll() {
-    debugW("Use enable_all() instead.");
-    enable_all();
-  };
 
   friend class EnableableCompare;
  private:
