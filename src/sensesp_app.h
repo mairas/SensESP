@@ -92,7 +92,7 @@ class SensESPApp : public SensESPBaseApp {
   WSClient* ws_client_;
 
   friend class HTTPServer;
-  friend class SensESPBareAppBuilder;
+  friend class SensESPAppBuilder;
 };
 
 extern SensESPApp* sensesp_app;
