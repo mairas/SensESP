@@ -44,12 +44,6 @@ class SensESPBaseApp {
   SensESPBaseApp(String preset_hostname = "SensESP");
 
   /**
-   * @brief Destroy the SensESP Base App object
-   * 
-   */
-  virtual ~SensESPBaseApp();
-
-  /**
    * @brief Initialize the app
    * 
    */
