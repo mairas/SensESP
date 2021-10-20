@@ -6,12 +6,10 @@
 #include "system/system_status_led.h"
 #include "transforms/debounce.h"
 
-
 /*
  * This constructor must be only used in SensESPAppBuilder
  */
-SensESPApp::SensESPApp(bool defer_setup) 
-    : SensESPBaseApp(defer_setup) {}
+SensESPApp::SensESPApp(bool defer_setup) : SensESPBaseApp(defer_setup) {}
 
 SensESPApp::SensESPApp(String preset_hostname, String ssid,
                        String wifi_password, String sk_server_address,
@@ -22,6 +20,13 @@ SensESPApp::SensESPApp(String preset_hostname, String ssid,
       sk_server_address_{sk_server_address},
       sk_server_port_{sk_server_port} {
   setup();
+}
+
+SensESPApp* SensESPApp::get() {
+  if (instance_ == nullptr) {
+    instance_ = new SensESPApp();
+  }
+  return (SensESPApp*)instance_;
 }
 
 void SensESPApp::setup() {
@@ -81,4 +86,6 @@ void SensESPApp::setup() {
   this->ws_client_->get_delta_count_producer().connect_to(system_status_led_);
 }
 
+// For backwards compatibility, the sensesp_app pointer is still available.
+// It is no longer internally used, however.
 SensESPApp* sensesp_app;

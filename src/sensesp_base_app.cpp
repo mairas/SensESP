@@ -17,6 +17,8 @@ void SetupSerialDebug(uint32_t baudrate) {
   debugI("\nSerial debug enabled");
 }
 
+SensESPBaseApp* SensESPBaseApp::instance_ = nullptr;
+
 /*
  * This constructor must be only used in SensESPBaseAppBuilder
  */
@@ -25,6 +27,16 @@ SensESPBaseApp::SensESPBaseApp(bool defer_setup) {}
 SensESPBaseApp::SensESPBaseApp(String preset_hostname)
     : preset_hostname_{preset_hostname} {
   setup();
+}
+
+// Combining singletons and inheritance is always clunky. Be sure to always
+// call the child class get() method, if any, first. Having an appropriate
+// Builder class for the child should take care of that.
+SensESPBaseApp* SensESPBaseApp::get() {
+  if (instance_ == nullptr) {
+    instance_ = new SensESPBaseApp();
+  }
+  return instance_;
 }
 
 void SensESPBaseApp::setup() {

@@ -19,6 +19,7 @@ class SensESPBaseAppBuilder {
     return this;
   }
   SensESPBaseApp* get_app() {
+    debugD("get_app()");
     app->setup();
     return app;
   }
