@@ -95,10 +95,6 @@ class SensESPApp : public SensESPBaseApp {
   String sk_server_address_ = "";
   uint16_t sk_server_port_ = 0;
 
-  bool enable_networking_ = false;
-  bool enable_http_server_ = false;
-  bool enable_websocket_client_ = false;
-
   MDNSDiscovery* mdns_discovery_;
   HTTPServer* http_server_;
   SystemStatusLed* system_status_led_ = NULL;
