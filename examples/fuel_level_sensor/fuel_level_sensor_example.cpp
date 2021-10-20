@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#include "sensesp_app.h"
+#include "sensesp_app_builder.h"
 #include "sensors/analog_input.h"
 #include "signalk/signalk_output.h"
 #include "transforms/moving_average.h"
@@ -13,7 +13,8 @@ ReactESP app([]() {
 #endif
 
   // Set up sensesp
-  sensesp_app = new SensESPApp();
+  SensESPAppBuilder builder;
+  auto sensesp_app = builder.get_app();
 
   // This reads A0 every 100 ms.
   // If you're using an ESP32, you must specify the pin number: AnalogInput(14);
@@ -33,7 +34,7 @@ ReactESP app([]() {
   // See this link for available tank paths:
   // https://signalk.org/specification/1.4.0/doc/vesselsBranch.html#vesselsregexptanks
   input->connect_to(avg)->connect_to(
-      new SKOutputNumber("tanks.fuel.0.currentLevel"));
+      new SKOutputFloat("tanks.fuel.0.currentLevel"));
 
   sensesp_app->enable();
 });

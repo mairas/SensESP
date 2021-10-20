@@ -50,7 +50,6 @@ ReactESP app([]() {
   sensesp_app = builder.set_hostname("sk-lights-vswitch")
                     ->set_sk_server("10.10.1.5", 3000)
                     ->set_wifi("YOUR_WIFI_SSID", "YOUR_WIFI_PASSWORD")
-                    ->set_standard_sensors(StandardSensors::NONE)
                     ->get_app();
 
 
@@ -86,7 +85,7 @@ ReactESP app([]() {
   // Create a switch controller to handle the user press logic and 
   // connect it a server PUT request...
   SmartSwitchController* controller = new SmartSwitchController(false);
-  controller->connect_to(new SKBooleanPutRequest(sk_path));
+  controller->connect_to(new SKBoolPutRequest(sk_path));
 
   // Also connect the controller to an onboard LED...
   controller->connect_to(led);

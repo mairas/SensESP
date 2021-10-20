@@ -31,7 +31,6 @@ ReactESP app([]() {
   sensesp_app = builder.set_hostname("relay")
                     ->set_sk_server("10.10.10.1", 3000)
                     ->set_wifi("yourSSID", "yourPassword")
-                    ->set_standard_sensors()
                     ->get_app();
 
   // To find valid Signal K Paths that fits your need you look at this link:
@@ -53,8 +52,8 @@ ReactESP app([]() {
   // Wire up the output of the float value on server
   // "environment.outside.illuminance" to the NumericThreshold, and then output
   // the transformed float to boolean to DigitalOutput
-  auto* listener = new SKNumericListener(sk_path);
-  listener->connect_to(new NumericThreshold(0.0f, 100.0f, true, config_path))
+  auto* listener = new SKFloatListener(sk_path);
+  listener->connect_to(new FloatThreshold(0.0f, 100.0f, true, config_path))
       ->connect_to(new DigitalOutput(5));
 
   // Start the SensESP application running
